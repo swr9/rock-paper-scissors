@@ -5,6 +5,11 @@ function getComputerChoice() {
   return gesture[randomIndex];
 }
 
+let playerWins = 0;
+let computerWins = 0;
+let ties = 0;
+let roundsPlayed = 0;
+
 function playRound(playerSelection, computerSelection) {
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -25,17 +30,12 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "paper" && computerSelection === "paper") ||
     (playerSelection === "rock" && computerSelection === "rock")
   ) {
+    ties++;
     return "It's a tie!";
   } else {
-    ties++;
     return "Enter your gesture.";
   }
 }
-
-let playerWins = 0;
-let computerWins = 0;
-let ties = 0;
-let roundsPlayed = 0;
 
 function playGame() {
   while (playerWins < 3 && computerWins < 3 && roundsPlayed < 5) {
