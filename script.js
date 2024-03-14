@@ -1,5 +1,6 @@
 let gesture = ["rock", "paper", "scissors"];
 
+// Randomly picks a gesture.
 function getComputerChoice() {
   let randomIndex = Math.floor(Math.random() * 3);
   return gesture[randomIndex];
@@ -9,6 +10,7 @@ let playerWins = 0;
 let computerWins = 0;
 let ties = 0;
 
+// Main rock paper scissors function, also increases playerWins variable.
 function playRound(playerSelection, computerSelection) {
   if (
     (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -36,6 +38,7 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
+// Function to prompt the players gesture and log outcomes.
 function playGame() {
   const playerSelection = prompt("Rock paper scissors, shoot!").toLowerCase();
   const computerSelection = getComputerChoice();
@@ -51,6 +54,7 @@ playGame();
 playGame();
 playGame();
 
+// If else statement to determine the winner.
 if (playerWins >= 3) {
   console.log("Player wins the game!");
 } else if (computerWins >= 3) {
