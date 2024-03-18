@@ -50,9 +50,11 @@ function playGame() {
   gamesPlayed++;
 }
 
+// While loop to automatically stop the game once gamesPlayed exceeds 5 or computerWins/playerWins exceeds 3.
 while (gamesPlayed < 5 && computerWins < 3 && playerWins < 3) {
   playGame();
 }
+
 // If else statement to determine the winner.
 if (playerWins >= 3) {
   console.log("Player wins the game!");
