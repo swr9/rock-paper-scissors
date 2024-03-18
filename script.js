@@ -9,7 +9,6 @@ function getComputerChoice() {
 let playerWins = 0;
 let computerWins = 0;
 let ties = 0;
-let gamesPlayed = 0;
 
 // Main rock paper scissors function, also increases playerWins variable.
 function playRound(playerSelection, computerSelection) {
@@ -47,11 +46,14 @@ function playGame() {
   console.log("Computer chose: " + computerSelection);
   const result = playRound(playerSelection, computerSelection);
   console.log(result);
-  gamesPlayed++;
 }
 
-// While loop to automatically stop the game once gamesPlayed exceeds 5 or computerWins/playerWins exceeds 3.
-while (gamesPlayed < 5 && computerWins < 3 && playerWins < 3) {
+// For loop that stops the game once the winner is determined.
+for (
+  let gamesPlayed = 0;
+  gamesPlayed < 5 && computerWins < 3 && playerWins < 3;
+  gamesPlayed++
+) {
   playGame();
 }
 
