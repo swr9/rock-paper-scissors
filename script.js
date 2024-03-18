@@ -1,4 +1,4 @@
-let gesture = ["rock", "paper", "scissors"];
+const gesture = ["rock", "paper", "scissors"];
 
 // Randomly picks a gesture.
 function getComputerChoice() {
@@ -9,6 +9,7 @@ function getComputerChoice() {
 let playerWins = 0;
 let computerWins = 0;
 let ties = 0;
+let gamesPlayed = 0;
 
 // Main rock paper scissors function, also increases playerWins variable.
 function playRound(playerSelection, computerSelection) {
@@ -46,14 +47,12 @@ function playGame() {
   console.log("Computer chose: " + computerSelection);
   const result = playRound(playerSelection, computerSelection);
   console.log(result);
+  gamesPlayed++;
 }
 
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
-
+while (gamesPlayed < 5 && computerWins < 3 && playerWins < 3) {
+  playGame();
+}
 // If else statement to determine the winner.
 if (playerWins >= 3) {
   console.log("Player wins the game!");
